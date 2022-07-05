@@ -1,0 +1,271 @@
+html,
+body,
+#root,
+#root > div {
+  height: 100%;
+}
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-weight: 200;
+  src: url("./fonts/SpoqaHanSansNeo-Thin.woff2") format("woff2"),
+    url("./fonts/SpoqaHanSansNeo-Thin.woff") format("woff"),
+    url("./fonts/SpoqaHanSansNeo-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-weight: 300;
+  src: url("./fonts/SpoqaHanSansNeo-Light.woff2") format("woff2"),
+    url("./fonts/SpoqaHanSansNeo-Light.woff") format("woff"),
+    url("./fonts/SpoqaHanSansNeo-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/SpoqaHanSansNeo-Regular.woff2") format("woff2"),
+    url("./fonts/SpoqaHanSansNeo-Regular.woff") format("woff"),
+    url("./fonts/SpoqaHanSansNeo-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-weight: 500;
+  src: url("./fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2"),
+    url("./fonts/SpoqaHanSansNeo-Bold.woff") format("woff"),
+    url("./fonts/SpoqaHanSansNeo-Bold.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: noraml;
+  font-size: 16px;
+  font-family: "Spoqa Han Sans", "sans-serif";
+}
+
+/*-------- Header start --------*/
+#header {
+  background-color: #ff5e3e;
+}
+
+.header-wrap {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  height: 64px;
+  justify-content: space-between;
+}
+
+#header-area {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+#header-area > img {
+  height: 40px;
+  width: auto;
+}
+
+#header-menu {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+/*-------- Header end --------*/
+/*-------- Map start --------*/
+#container {
+  height: 600px;
+  background-color: #ffffff;
+  width: 100%;
+  margin: 1rem auto;
+  position: relative;
+}
+
+.map-area > section {
+  position: absolute;
+  z-index: 3;
+  width: 100px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1rem;
+}
+
+#getgeobtn {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  cursor: pointer;
+  background-color: #000000;
+  border: 1px solid #3396ff;
+  border-radius: 50%;
+  padding: 4px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  user-select: none;
+}
+
+#getgeobtn:hover {
+  background-color: #ff523e;
+}
+
+#getgeobtn > img {
+  object-fit: contain;
+}
+
+#searchPlaces {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  z-index: 2;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  border-radius: 3px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 2px 0px;
+  display: flex;
+  user-select: none;
+  flex-direction: column;
+  cursor: default;
+}
+
+.place-info {
+  padding: 4px;
+  align-items: center;
+}
+
+.place-info > img {
+  width: 2rem;
+  padding-right: 4px;
+}
+
+.place-info > span {
+  font-size: 0.8rem;
+}
+
+/*-------- Map end --------*/
+/*-------- Setting start --------*/
+#setting {
+  background-color: #00cccc;
+  padding-bottom: 0.5rem;
+}
+.setting-wrap {
+  width: 100%;
+  margin: 0 1rem;
+  padding-top: 0.5rem;
+  color: #fff;
+}
+
+.setting-wrap > h1 {
+  font-size: 1.5rem;
+}
+
+.setting-area {
+  display: flex;
+  padding-left: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.setting-area > h2 {
+  font-size: 1rem;
+  min-width: 120px;
+}
+.setting-area > label {
+  font-size: 1rem;
+}
+.checklist {
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  margin-left: 2rem;
+  min-width: 185px;
+}
+
+.checklist input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: #fff;
+  box-shadow: 0 0 0 1px #ff5e3e;
+}
+
+.checklist:hover input ~ .checkmark,
+.checklist input:focus ~ .checkmark {
+  box-shadow: 0 0 0 3px #ff5e3e;
+}
+
+.checklist input:checked ~ .checkmark {
+  background-color: #ff5e3e;
+}
+
+.checklist input:checked ~ .checked::after {
+  display: block;
+}
+
+.checklist .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  background: white;
+  width: 4px;
+  height: 4px;
+  box-shadow: 3px 0 0 white, 6px 0 0 white, 6px -3px 0 white, 6px -6px 0 white,
+    6px -8px 0 white, 6px -10px 0 white;
+  transform: rotate(45deg);
+}
+
+/*-------- Setting end --------*/
+
+#footer {
+  height: 200px;
+  background-color: #f5f5f5;
+}
+
+/* --- 반응형 --- */
+@media all and (min-width: 1000px) {
+  #container {
+    width: 80%;
+  }
+  .header-wrap {
+    width: 80%;
+  }
+  .setting-wrap {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media all and (max-width: 999px) {
+  .header-wrap {
+    padding-left: 1rem;
+    height: 3rem;
+  }
+  #header-area > img {
+    height: 2rem;
+    width: auto;
+  }
+  .setting-wrap > h1 {
+    font-size: 1.2rem;
+  }
+}
+@media all and (max-width: 453px) {
+  .checklist {
+    margin-left: 0rem;
+  }
+}
+/* --- 반응형 --- */

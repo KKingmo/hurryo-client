@@ -1,0 +1,17 @@
+.info-area {
+  display: flex;
+  flex-direction: column;
+  background: #2f4f4f;
+  padding: 4px;
+  z-index: 1;
+}
+.info-title {
+  display: inline-block;
+  background: #2f4f4f;
+  color: #fff;
+  text-align: left;
+  line-height: 22px;
+  padding: 0px 10px;
+  min-width: 300px;
+  max-width: 100%;
+}
